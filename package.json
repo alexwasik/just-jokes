@@ -1,0 +1,50 @@
+{
+  "name": "just-jokes",
+  "version": "0.0.1",
+  "description": "Random Joke Generator Package",
+  "main": "lib/index.ts",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "format": "prettier --write \"src/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexwasik/just-jokes.git"
+  },
+  "keywords": [
+    "joke",
+    "jokes",
+    "lol",
+    "funny",
+    "generator"
+  ],
+  "author": "Alex Wasik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexwasik/just-jokes/issues"
+  },
+  "homepage": "https://github.com/alexwasik/just-jokes#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.3",
+    "prettier": "^2.5.1",
+    "ts-jest": "^27.1.0",
+    "ts-node": "^10.4.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.5.2"
+  }
+}
