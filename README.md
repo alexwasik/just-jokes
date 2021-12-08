@@ -1,5 +1,10 @@
 # Just Jokes
 
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/alexwasik/just-jokes)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[![GitHub license](https://img.shields.io/github/license/alexwasik/just-jokes)](https://github.com/alexwasik/just-jokes/blob/main/LICENSE)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 ## Description
 
 A simple package for random jokes
