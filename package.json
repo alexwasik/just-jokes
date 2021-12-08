@@ -2,7 +2,7 @@
   "name": "just-jokes",
   "version": "0.0.1",
   "description": "Random Joke Generator Package",
-  "main": "lib/index.ts",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
