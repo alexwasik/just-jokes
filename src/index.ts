@@ -1,5 +1,13 @@
-import { getRandomJoke } from "./utils";
+import { getRandomJoke, getRandomJokes } from './utils';
 
-const randomJoke = getRandomJoke();
+const randomJoke = () => {
+  const joke = getRandomJoke();
+  return joke;
+};
 
-export { randomJoke };
+const randomJokes = (range: number) => {
+  const jokes = getRandomJokes(range);
+  return jokes;
+};
+
+export { randomJoke, randomJokes };
