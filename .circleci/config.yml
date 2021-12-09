@@ -7,7 +7,7 @@ orbs:
   node: circleci/node@4.7
 
 defaults: &defaults
-  working_directory: ~/repo
+  working_directory: ~/repo/just-jokes
   docker:
     - image: circleci/node:16.10
 
