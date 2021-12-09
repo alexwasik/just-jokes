@@ -7,7 +7,7 @@ orbs:
   node: circleci/node@4.7
 
 defaults: &defaults
-  working_directory: ~/repo
+  working_directory: ~/repo/just-jokes
   docker:
     - image: circleci/node:16.10
 
@@ -18,6 +18,10 @@ jobs:
   publish:
     <<: *defaults
     steps:
+      - checkout
+      - run: npm install
+      - attach_workspace:
+          at: ~/repo/just-jokes
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
