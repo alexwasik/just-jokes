@@ -20,10 +20,12 @@ jobs:
     steps:
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN"
       - run:
           name: Publish package
-          command: npm publish
+          command: |
+            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+            npm publish
 
 workflows:
   test-and-publish: # This is the name of the workflow, feel free to change it to better match your workflow.
@@ -42,3 +44,5 @@ workflows:
           filters:
             branches:
               only: main
+            tags:
+              only: /^v.*/
