@@ -1,6 +1,6 @@
 {
   "name": "just-jokes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Random Joke Generator Package",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
