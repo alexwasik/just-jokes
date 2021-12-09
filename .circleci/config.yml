@@ -19,12 +19,6 @@ jobs:
       pkg-manager: npm
   - publish:
       <<: *defaults
-      - attach_workspace:
-          at: ~/repo
-      filters:
-        branch: main
-        tags:
-          only: /v[0-9]+(\.[0-9]+)*/
       steps:
         - run:
           - name: Authenticate with registry
@@ -32,6 +26,12 @@ jobs:
         - run:
             name: Publish package
             command: npm publish
+      - attach_workspace:
+          at: ~/repo
+      filters:
+        branch: main
+        tags:
+          only: /v[0-9]+(\.[0-9]+)*/
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
