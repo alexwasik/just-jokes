@@ -19,6 +19,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - run: npm install
       - attach_workspace:
           at: ~/repo/just-jokes
       - run:
