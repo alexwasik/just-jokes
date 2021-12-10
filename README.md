@@ -58,8 +58,5 @@ const yoMommas = yoMommaJokes(10)
 
 ## Credit
 
-Borrowed random jokes from [15Datz official_joke_api](https://github.com/15Dkatz/official_joke_api) repo which states:
-
-> The majority of these jokes were contributed by joke-loving coders around the world!
-
-YoMomma jokes provided by [Fadyazmy](https://www.npmjs.com/package/yo-mamma)
+Forked random jokes from [15Datz official_joke_api](https://github.com/15Dkatz/official_joke_api)
+YoMomma jokes provided by [Josh Buchea](https://github.com/joshbuchea/yo-mama)

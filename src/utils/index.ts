@@ -1,14 +1,14 @@
 import jokes from '../jokes/jokes.json';
-const yoMomma = require('yo-mamma').default;
+import yoMomma from '../jokes/yomomma.json';
 
-const DICT_MAX: number = 1039;
+const DICT_MAX: number = 847;
 const MAX_JOKE_COUNT: number = 50;
 
 
 const uniqueIndex = (maxNr: number) => {
-  let array: number[] = []
+  const array: number[] = []
   for (let i = 0; i < maxNr; i++) {
-    let random = Math.floor(Math.random() * DICT_MAX)
+    const random = Math.floor(Math.random() * DICT_MAX)
     array.push(random)
   }
   return array
@@ -38,10 +38,10 @@ const getRandomJokes = (numberOfJokes: number = 1) => {
 }
 
 const getYoMommaJoke = () => {
-  const random_index: number = Math.floor(Math.random() * DICT_MAX);
-  const joke = yoMomma(random_index);
+  const randomIndex: number = Math.floor(Math.random() * DICT_MAX);
+  const joke = yoMomma[randomIndex];
   return {
-    id: random_index,
+    id: randomIndex,
     type: 'yo-momma',
     setup: undefined,
     punchline: joke
@@ -53,11 +53,11 @@ const getYoMommaJokes = (numberOfJokes: number = 1): object[] => {
     throw new Error('Number of jokes must be greater than 0');
   }
 
-  const randomJokes: object[] = [];
   const fetchJokes = (count: number) => {
-    const jokes = uniqueIndex(count);
-    jokes.forEach(jokeIndex => {
-      const joke = yoMomma(jokeIndex);
+    const randomJokes: object[] = [];
+    const jokesArray = uniqueIndex(count);
+    jokesArray.forEach(jokeIndex => {
+      const joke = yoMomma[jokeIndex];
       randomJokes.push({
         id: jokeIndex,
         type: 'yo-momma',
@@ -65,7 +65,6 @@ const getYoMommaJokes = (numberOfJokes: number = 1): object[] => {
         punchline: joke
       });
     });
-    console.log('randomJokes length', randomJokes.length);
     return randomJokes;
   }
   if (numberOfJokes > MAX_JOKE_COUNT) {

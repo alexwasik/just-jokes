@@ -1,10 +1,23 @@
 import { getRandomJoke, getRandomJokes, getYoMommaJoke, getYoMommaJokes } from '../../utils/index';
-  const jokesObjectMatch = {
-    id: expect.any(Number),
-    type: expect.any(String),
-    setup: expect.any(String),
-    punchline: expect.any(String),
-  }
+
+const jokesObjectMatch = {
+  id: expect.any(Number),
+  type: expect.any(String),
+  setup: expect.any(String),
+  punchline: expect.any(String),
+}
+
+const yoMommaJokeObjectMatch = {
+  id: expect.any(Number),
+  type: expect.stringContaining('yo-momma'),
+  setup: expect.extend({
+    toBeUndefined() {
+      return this.isUndefined()
+    }
+  }),
+  punchline: expect.any(String),
+}
+
 describe('getRandomJoke', () => {
   test('return random joke object', () => {
     const joke = getRandomJoke();
@@ -48,21 +61,9 @@ describe('get random jokes', () => {
   })
 })
 
-  const yoMommaJokeObjectMatch = {
-    id: expect.any(Number),
-    type: expect.stringContaining('yo-momma'),
-    setup: expect.extend({
-      toBeUndefined() {
-        return this.isUndefined()
-      }
-    }),
-    punchline: expect.any(String),
-  }
-
 describe('get random yoMomma joke', () => {
   test('return random joke object', () => {
     const joke = getYoMommaJoke();
-    console.log(joke);
     expect(joke).toBeInstanceOf(Object);
     expect(joke).toMatchObject(yoMommaJokeObjectMatch)
   })

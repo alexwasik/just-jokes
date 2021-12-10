@@ -1,7 +1,7 @@
 {
   "name": "just-jokes",
   "version": "0.0.2",
-  "description": "Random Joke Generator Package",
+  "description": "Random Joke and YoMomma Joke Generator Package",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -22,9 +22,12 @@
   "keywords": [
     "joke",
     "jokes",
+    "general jokes",
     "lol",
     "funny",
-    "generator"
+    "generator",
+    "yo momma",
+    "yo momma jokes"
   ],
   "author": "Alex Wasik",
   "license": "MIT",
@@ -35,9 +38,6 @@
   "files": [
     "lib/**/*"
   ],
-  "dependencies": {
-    "yo-mamma": "^1.3.0"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
