@@ -1,21 +1,22 @@
 import jokes from '../jokes/jokes.json';
 import yoMomma from '../jokes/yomomma.json';
 
-const DICT_MAX: number = 847;
+const YOMOMMA_MAX: number = yoMomma.length;
+const RANDOM_MAX: number = jokes.length;
 const MAX_JOKE_COUNT: number = 50;
 
 
 const uniqueIndex = (maxNr: number) => {
   const array: number[] = []
   for (let i = 0; i < maxNr; i++) {
-    const random = Math.floor(Math.random() * DICT_MAX)
+    const random = Math.floor(Math.random() * YOMOMMA_MAX)
     array.push(random)
   }
   return array
 }
 
 const getRandomJoke = () => {
-  const randomIndex: number = Math.floor(Math.random() * jokes.length);
+  const randomIndex: number = Math.floor(Math.random() * RANDOM_MAX);
   return jokes[randomIndex];
 }
 
@@ -38,7 +39,7 @@ const getRandomJokes = (numberOfJokes: number = 1) => {
 }
 
 const getYoMommaJoke = () => {
-  const randomIndex: number = Math.floor(Math.random() * DICT_MAX);
+  const randomIndex: number = Math.floor(Math.random() * YOMOMMA_MAX);
   const joke = yoMomma[randomIndex];
   return {
     id: randomIndex,
